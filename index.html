@@ -4,22 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets/img/favicon.png" rel="icon">
-
-    <!--<link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">-->
     <title>Mon Portfolio</title>
     <style>
         *, ::before, ::after{
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+        li{
+            list-style-type: none;
         }
         html{
             width: 100%;
@@ -47,6 +40,7 @@
             backdrop-filter: blur(10px);
             z-index: 900;
             overflow: scroll;
+            animation: fade-left 1.5s ease-in;
         }
         .profil-image{
             border-radius: 50%;
@@ -168,10 +162,47 @@
             text-align: center;
             padding-top: 30vh;
             opacity: 1;
-            animation: fade-left 1s linear ;
+            animation: fade-left 1.5s linear ;
             
         }
-        
+        @keyframes tada
+{
+    from
+    {
+        -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+    }
+
+    10%,
+    20%
+    {
+        -webkit-transform: scale3d(.95, .95, .95) rotate3d(0, 0, 1, -10deg);
+                transform: scale3d(.95, .95, .95) rotate3d(0, 0, 1, -10deg);
+    }
+
+    30%,
+    50%,
+    70%,
+    90%
+    {
+        -webkit-transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 10deg);
+                transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 10deg);
+    }
+
+    40%,
+    60%,
+    80%
+    {
+        -webkit-transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, -10deg);
+                transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, -10deg);
+    }
+
+    to
+    {
+        -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+    }
+}
 
         @keyframes fade-left{
             0%{
@@ -240,7 +271,7 @@
             font-size: 2em;
             color: blue;
             border-bottom: 4px solid orange;
-            animation: flashing 1s linear ease-in-out;
+            animation: flashing 1s linear;
         }
         
 
@@ -258,6 +289,7 @@
         .liste-info{
             padding: 10px;
             list-style-type: circle;
+            animation: flashing 1s linear ease-in-out direction fill-mode;
         }
         .liste-info-span{
             color: blue;
@@ -382,6 +414,55 @@
         .parcour1::before{
             
         }
+
+        /*      section cervice      */
+        .service { margin-bottom: 35px; }
+
+.service-title { margin-bottom: 20px; }
+
+.service-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.service-item {
+  position: relative;
+  background: var(--border-gradient-onyx);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-2);
+  z-index: 1;
+}
+
+.service-item::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.service-icon-box { margin-bottom: 10px; }
+
+.service-icon-box img { margin: auto; }
+
+.service-content-box { text-align: center; }
+
+.service-item-title { margin-bottom: 7px; }
+
+.service-item-text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-3);
+  line-height: 1.6;
+}
+
+.service-icon-box img{
+    margin-right: 50%;
+}
+
     </style>
 </head>
 <body>
@@ -401,7 +482,7 @@
                     <li><a href="#acc" class="data-nav-link"><i> </i><span>Acceuil</span></a></li>
                     <li><a href="#comp" class="data-nav-link"><i> </i><span>Competances</span></a></li>
                     <li><a href="#parc"><i> </i><span>Parcour</span></a></li>
-                    <li><a href="#"><i> </i><span>Services</span></a></li>
+                    <li><a href="#sevr"><i> </i><span>Services</span></a></li>
                     <li><a href="#"><i> </i><span>Contacts</span></a></li>
                 </ul>
             </nav>
@@ -518,7 +599,7 @@
                     </div>
                 </article>
             </section>
-            <section class="parcours" id="parc">
+            <section class="parcours bleu-bg" id="parc">
                 <article class="parcour1">
                     <div class="div-titre-article">
                         <h2 class="titre-article"> Mon Parcoure</h2>
@@ -582,21 +663,19 @@
                             </h5>
                         </div>
                     </div>
-                    
-                    
                 </article>
             </section>
             <section class="services" id="sevr">
                 <section class="service">
 
-                    <h3 class="h3 service-title">What i'm doing</h3>
+                    <h3 class="h3 titre-article">Nos Services</h3>
           
                     <ul class="service-list">
           
                       <li class="service-item">
           
                         <div class="service-icon-box">
-                          <img src="./assets/images/icon-design.svg
+                          <img src="Images/web-page.svg
                           " alt="design icon" width="40">
                         </div>
           
@@ -649,7 +728,7 @@
                         </div>
           
                         <div class="service-content-box">
-                          <h4 class="h4 service-item-title">Inphographe</h4>
+                          <h4 class="h4 service-item-title">Infographe</h4>
           
                           <p class="service-item-text">
                             I make high-quality photos of any category at a professional level.
